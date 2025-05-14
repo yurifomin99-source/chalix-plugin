@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - './**'
+      - 'test-ci/**'
 
 jobs:
   refresh-tutor-k8s:
