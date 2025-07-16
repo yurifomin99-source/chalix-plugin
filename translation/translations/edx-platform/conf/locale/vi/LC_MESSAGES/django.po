@@ -1,0 +1,400 @@
+# Vietnamese translation for edx-platform
+# Copyright (C) 2025 edX
+# This file is distributed under the GNU AFFERO GENERAL PUBLIC LICENSE.
+# Your Name <your.email@example.com>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: edx-platform\n"
+"Report-Msgid-Bugs-To: openedx-translation@googlegroups.com\n"
+"POT-Creation-Date: 2025-07-15 12:00+0000\n"
+"PO-Revision-Date: 2025-07-15 12:00+0000\n"
+"Last-Translator: Your Name <your.email@example.com>\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+# Custom Vietnamese translations for OpenedX
+
+# Basic UI elements
+msgid "Welcome"
+msgstr "Chào mừng"
+
+msgid "Home"
+msgstr "Trang chủ"
+
+msgid "Dashboard"
+msgstr "Bảng điều khiển"
+
+msgid "Profile"
+msgstr "Hồ sơ"
+
+msgid "Settings"
+msgstr "Cài đặt"
+
+msgid "Help"
+msgstr "Trợ giúp"
+
+msgid "Search"
+msgstr "Tìm kiếm"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Back"
+msgstr "Quay lại"
+
+msgid "Next"
+msgstr "Tiếp theo"
+
+msgid "Previous"
+msgstr "Trước đó"
+
+msgid "Continue"
+msgstr "Tiếp tục"
+
+msgid "Submit"
+msgstr "Gửi"
+
+msgid "Save"
+msgstr "Lưu"
+
+msgid "Cancel"
+msgstr "Hủy"
+
+msgid "Delete"
+msgstr "Xóa"
+
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+msgid "Update"
+msgstr "Cập nhật"
+
+msgid "Confirm"
+msgstr "Xác nhận"
+
+msgid "Close"
+msgstr "Đóng"
+
+# Educational terms
+msgid "Course"
+msgstr "Khóa học"
+
+msgid "Courses"
+msgstr "Các khóa học"
+
+msgid "Student"
+msgstr "Học viên"
+
+msgid "Students"
+msgstr "Các học viên"
+
+msgid "Instructor"
+msgstr "Giảng viên"
+
+msgid "Instructors"
+msgstr "Các giảng viên"
+
+msgid "Teacher"
+msgstr "Giáo viên"
+
+msgid "Professor"
+msgstr "Giáo sư"
+
+msgid "Assignment"
+msgstr "Bài tập"
+
+msgid "Assignments"
+msgstr "Các bài tập"
+
+msgid "Quiz"
+msgstr "Bài kiểm tra"
+
+msgid "Quizzes"
+msgstr "Các bài kiểm tra"
+
+msgid "Exam"
+msgstr "Kỳ thi"
+
+msgid "Test"
+msgstr "Bài test"
+
+msgid "Discussion"
+msgstr "Thảo luận"
+
+msgid "Discussions"
+msgstr "Các cuộc thảo luận"
+
+msgid "Forum"
+msgstr "Diễn đàn"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Videos"
+msgstr "Các video"
+
+msgid "Lecture"
+msgstr "Bài giảng"
+
+msgid "Lesson"
+msgstr "Bài học"
+
+msgid "Chapter"
+msgstr "Chương"
+
+msgid "Unit"
+msgstr "Đơn vị"
+
+msgid "Module"
+msgstr "Module"
+
+msgid "Progress"
+msgstr "Tiến độ"
+
+msgid "Grade"
+msgstr "Điểm"
+
+msgid "Grades"
+msgstr "Các điểm"
+
+msgid "Certificate"
+msgstr "Chứng chỉ"
+
+msgid "Diploma"
+msgstr "Bằng cấp"
+
+msgid "Enrollment"
+msgstr "Đăng ký"
+
+msgid "Schedule"
+msgstr "Lịch trình"
+
+msgid "Calendar"
+msgstr "Lịch"
+
+msgid "Deadline"
+msgstr "Hạn chót"
+
+msgid "Due date"
+msgstr "Ngày đến hạn"
+
+msgid "Submission"
+msgstr "Bài nộp"
+
+msgid "Feedback"
+msgstr "Phản hồi"
+
+msgid "Announcement"
+msgstr "Thông báo"
+
+msgid "Notifications"
+msgstr "Thông báo"
+
+msgid "Library"
+msgstr "Thư viện"
+
+msgid "Resources"
+msgstr "Tài nguyên"
+
+msgid "Materials"
+msgstr "Tài liệu"
+
+msgid "Content"
+msgstr "Nội dung"
+
+msgid "Syllabus"
+msgstr "Giáo trình"
+
+msgid "Curriculum"
+msgstr "Chương trình học"
+
+msgid "Learning"
+msgstr "Học tập"
+
+msgid "Education"
+msgstr "Giáo dục"
+
+msgid "Knowledge"
+msgstr "Kiến thức"
+
+msgid "Skills"
+msgstr "Kỹ năng"
+
+msgid "Competency"
+msgstr "Năng lực"
+
+msgid "Assessment"
+msgstr "Đánh giá"
+
+msgid "Evaluation"
+msgstr "Đánh giá"
+
+msgid "Review"
+msgstr "Xem xét"
+
+msgid "Study"
+msgstr "Nghiên cứu"
+
+msgid "Research"
+msgstr "Nghiên cứu"
+
+msgid "Project"
+msgstr "Dự án"
+
+msgid "Presentation"
+msgstr "Bài thuyết trình"
+
+msgid "Report"
+msgstr "Báo cáo"
+
+msgid "Essay"
+msgstr "Bài luận"
+
+msgid "Paper"
+msgstr "Bài báo"
+
+msgid "Thesis"
+msgstr "Luận văn"
+
+# Status and actions
+msgid "Complete"
+msgstr "Hoàn thành"
+
+msgid "Completed"
+msgstr "Đã hoàn thành"
+
+msgid "In Progress"
+msgstr "Đang thực hiện"
+
+msgid "Not Started"
+msgstr "Chưa bắt đầu"
+
+msgid "Pending"
+msgstr "Đang chờ"
+
+msgid "Draft"
+msgstr "Bản nháp"
+
+msgid "Published"
+msgstr "Đã xuất bản"
+
+msgid "Unpublished"
+msgstr "Chưa xuất bản"
+
+msgid "Active"
+msgstr "Hoạt động"
+
+msgid "Inactive"
+msgstr "Không hoạt động"
+
+msgid "Enabled"
+msgstr "Đã bật"
+
+msgid "Disabled"
+msgstr "Đã tắt"
+
+msgid "Available"
+msgstr "Có sẵn"
+
+msgid "Unavailable"
+msgstr "Không có sẵn"
+
+msgid "Public"
+msgstr "Công khai"
+
+msgid "Private"
+msgstr "Riêng tư"
+
+msgid "Required"
+msgstr "Bắt buộc"
+
+msgid "Optional"
+msgstr "Tùy chọn"
+
+msgid "Recommended"
+msgstr "Được khuyến khích"
+
+# Time related
+msgid "Today"
+msgstr "Hôm nay"
+
+msgid "Tomorrow"
+msgstr "Ngày mai"
+
+msgid "Yesterday"
+msgstr "Hôm qua"
+
+msgid "This week"
+msgstr "Tuần này"
+
+msgid "Next week"
+msgstr "Tuần tới"
+
+msgid "Last week"
+msgstr "Tuần trước"
+
+msgid "This month"
+msgstr "Tháng này"
+
+msgid "Next month"
+msgstr "Tháng tới"
+
+msgid "Last month"
+msgstr "Tháng trước"
+
+msgid "Start date"
+msgstr "Ngày bắt đầu"
+
+msgid "End date"
+msgstr "Ngày kết thúc"
+
+msgid "Duration"
+msgstr "Thời lượng"
+
+# Error messages
+msgid "Error"
+msgstr "Lỗi"
+
+msgid "Warning"
+msgstr "Cảnh báo"
+
+msgid "Success"
+msgstr "Thành công"
+
+msgid "Information"
+msgstr "Thông tin"
+
+msgid "Loading"
+msgstr "Đang tải"
+
+msgid "Please wait"
+msgstr "Vui lòng đợi"
+
+msgid "Try again"
+msgstr "Thử lại"
+
+msgid "Contact support"
+msgstr "Liên hệ hỗ trợ"
+
+msgid "Page not found"
+msgstr "Không tìm thấy trang"
+
+msgid "Access denied"
+msgstr "Truy cập bị từ chối"
+
+msgid "Permission denied"
+msgstr "Không có quyền"
+
+msgid "Session expired"
+msgstr "Phiên đã hết hạn"
+
+msgid "Network error"
+msgstr "Lỗi mạng"
+
+msgid "Server error"
+msgstr "Lỗi máy chủ"
