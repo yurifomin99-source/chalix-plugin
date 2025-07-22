@@ -121,15 +121,15 @@ for mfe in chalix_theme_styled_mfes:
             (
                 f"mfe-dockerfile-post-npm-install-{mfe}",
                 """
-RUN npm install @edly-io/chalix_theme-frontend-component-footer@^3.0.0
-RUN npm install '@edx/frontend-component-header@npm:@edly-io/chalix_theme-frontend-component-header@^4.0.0'
-RUN npm install '@edx/brand@npm:@edly-io/chalix_theme-brand-ITG@^2.2.2'
+RUN npm install @edly-io/indigo-frontend-component-footer@^3.0.0
+RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^4.0.0'
+RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.2.2'
 """,
             ),
             (
                 f"mfe-env-config-runtime-definitions-{mfe}",
                 """
-const { default: ChalixThemeFooter } = await import('@edly-io/chalix_theme-frontend-component-footer');
+const { default: ChalixThemeFooter } = await import('@edly-io/indigo-frontend-component-footer');
 """,
             ),
         ]
@@ -139,7 +139,7 @@ const { default: ChalixThemeFooter } = await import('@edly-io/chalix_theme-front
 hooks.Filters.ENV_PATCHES.add_item(
     (
         "mfe-dockerfile-post-npm-install-authn",
-        "RUN npm install '@edx/brand@npm:@edly-io/chalix_theme-brand-ITG@^2.2.2'",
+        "RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.2.2'",
     )
 )
 
@@ -210,7 +210,7 @@ for mfe in chalix_theme_styled_mfes:
                     id: 'default_contents',
                     type: DIRECT_PLUGIN,
                     priority: 1,
-                    RenderWidget: <ChalixThemeFooter />,  # updated
+                    RenderWidget: <ChalixThemeFooter />
                 },
             },
             {
