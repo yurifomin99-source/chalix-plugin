@@ -13,8 +13,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install module
-        run: pip install git+ssh://git@github.com/Alimento-Team/chalix-plugin.git
-        working-directory: ./chalix-theme
+        run: |
+          cd chalix-theme
+          pip install .
       - name: Enable plugin
         run: TUTOR_ROOT=/home/alimento/chalix tutor plugins enable chalix_theme
       - name: Render Tutor environment
