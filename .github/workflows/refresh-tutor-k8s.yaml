@@ -5,7 +5,9 @@ on:
     branches: [ "main" ]
     paths:
       - "chalix-theme/**"  
-
+defaults:
+  run:
+    working-directory: ./chalix-theme
 jobs:
   refresh-tutor-k8s:
     runs-on: self-hosted

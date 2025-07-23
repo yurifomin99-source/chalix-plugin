@@ -3,7 +3,7 @@ from __future__ import annotations
 import os
 import typing as t
 from glob import glob
- 
+
 import importlib_resources
 from tutor import hooks
 from tutor.__about__ import __version_suffix__
