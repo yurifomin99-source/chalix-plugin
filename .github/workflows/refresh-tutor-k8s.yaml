@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
     paths:
-      - 'test-ci/**'
+      - "chalix-theme/**"  
 
 jobs:
   refresh-tutor-k8s:
@@ -12,6 +12,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Run command in subdirectory
-        run: touch test.txt
-        working-directory: /home/cicd/test.txt
+      - name: Install module
+        run: pip install git+ssh://git@github.com/Alimento-Team/chalix-plugin.git
+      - name: Enable plugin
+        run: TUTOR_ROOT=/home/alimento/chalix tutor plugins enable chalix-theme
+      - name: Render Tutor environment
+        run: TUTOR_ROOT=/home/alimento/chalix tutor config save
+      - name: Build Tutor images
+        run: TUTOR_ROOT=/home/alimento/chalix tutor images build openedx
+      - name: Push Tutor images
+        run: TUTOR_ROOT=/home/alimento/chalix tutor images push openedx
+      - name: Apply changes
+        run: TUTOR_ROOT=/home/alimento/chalix tutor k8s upgrade
