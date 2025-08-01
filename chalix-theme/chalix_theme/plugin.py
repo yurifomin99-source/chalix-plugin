@@ -10,7 +10,7 @@ from tutor.__about__ import __version_suffix__
 from tutormfe.hooks import PLUGIN_SLOTS
 
 from .__about__ import __version__
-
+ 
 # Handle version suffix in main mode, just like Chalix Ed core
 if __version_suffix__:
     __version__ += "-" + __version_suffix__
