@@ -22,7 +22,7 @@ jobs:
         run: TUTOR_ROOT=/home/alimento/chalix tutor config save
       - name: Build Tutor images
         run: TUTOR_ROOT=/home/alimento/chalix tutor images build openedx
-      - name: Push Tutor images
-        run: TUTOR_ROOT=/home/alimento/chalix tutor images push openedx
+      # - name: Push Tutor images
+      #   run: TUTOR_ROOT=/home/alimento/chalix tutor images push openedx
       - name: Apply changes
         run: TUTOR_ROOT=/home/alimento/chalix tutor k8s upgrade
