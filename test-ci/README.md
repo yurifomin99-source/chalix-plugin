@@ -1,2 +1,0 @@
-# chalix-plugin
- 
