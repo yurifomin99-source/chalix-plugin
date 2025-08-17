@@ -3,14 +3,14 @@ from __future__ import annotations
 import os
 import typing as t
 from glob import glob
-  
+
 import importlib_resources
 from tutor import hooks
 from tutor.__about__ import __version_suffix__
 from tutormfe.hooks import PLUGIN_SLOTS
 
 from .__about__ import __version__
- 
+
 # Handle version suffix in main mode, just like Chalix Ed core
 if __version_suffix__:
     __version__ += "-" + __version_suffix__
@@ -123,7 +123,6 @@ for mfe in chalix_theme_styled_mfes:
                 """
 RUN npm install @edly-io/indigo-frontend-component-footer@^3.0.0
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^4.0.0'
-RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.2.2'
 """,
             ),
             (
@@ -134,14 +133,6 @@ const { default: ChalixThemeFooter } = await import('@edly-io/indigo-frontend-co
             ),
         ]
     )
-
-
-hooks.Filters.ENV_PATCHES.add_item(
-    (
-        "mfe-dockerfile-post-npm-install-authn",
-        "RUN npm install '@edx/brand@npm:@edly-io/indigo-brand-openedx@^2.2.2'",
-    )
-)
 
 # Include js file in lms main.html, main_django.html, and certificate.html
 
