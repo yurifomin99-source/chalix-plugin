@@ -22,8 +22,8 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
     "defaults": {
         "VERSION": __version__,
         "WELCOME_MESSAGE": "Chalix Ed Platform for ITG Learning Site",
-        "PRIMARY_COLOR": "#15376D",  # ChalixTheme
-        "CHALIX_THEME_PRIMARY_COLOR": "#B755BC",  # ChalixTheme
+        "PRIMARY_COLOR": "#3494c8",
+        "CHALIX_THEME_PRIMARY_COLOR": "#3494c8",
         "ENABLE_DARK_TOGGLE": True,
         "CHALIX_THEME_ENABLE_DARK_TOGGLE": True,
         # Footer links are dictionaries with a "title" and "url"

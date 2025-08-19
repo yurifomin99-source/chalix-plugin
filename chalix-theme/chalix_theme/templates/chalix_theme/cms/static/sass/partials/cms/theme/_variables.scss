@@ -11,10 +11,13 @@ $m-blue-d6: mix(rgb(42, 134, 226), $primary, 40%) !default;
 
 $uxpl-blue-hover-active: lighten($primary, 7%) !default;
 
-$serif: 'Inter';
-$f-sans-serif: 'Inter', 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family-title: 'Inter';
-$font-family-sans-serif: 'Inter', 'Open Sans','Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif: 'Inter', 'Roboto', sans-serif;
+$f-sans-serif: 'Inter', 'Roboto', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-title: 'Inter', 'Roboto', sans-serif;
+$font-family-sans-serif: 'Inter', 'Roboto', 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 
 // Initialize the Open edX Bootstrap theme
 @import 'edx-bootstrap/sass/open-edx/theme';

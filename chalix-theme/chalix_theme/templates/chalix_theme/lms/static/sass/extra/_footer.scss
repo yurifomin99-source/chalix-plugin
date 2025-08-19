@@ -1,7 +1,8 @@
 // Include custom Footer
 .wrapper-footer {
     padding: 25px 0;
-    border-top: 1px solid $gray-light;
+    border-top: 1px solid #9b9595;
+    background-color: #ffffff;
 
     @include media-breakpoint-up(md) {
         padding: 45px 0;
@@ -53,9 +54,11 @@ footer.chalix-ed-container {
             padding: 0 5px;
             letter-spacing: normal;
             position: relative;
+            color: #000000;
+            position: relative;
             font-size: 12px;
             line-height: 18px;
-            color: #515661;
+            color: #374151;
 
             &:first-child {
                 padding-left: 0;
@@ -72,7 +75,7 @@ footer.chalix-ed-container {
                     width: 1px;
                     height: 29px;
                     margin: -14px 0 0;
-                    background: #515661;
+                    background: #374151;
                     ;
                 }
             }
@@ -100,11 +103,11 @@ footer.chalix-ed-container {
                 }
 
                 a {
-                    color: $light-dark;
+                    color: #374151;
                     text-decoration: none;
 
                     &:hover {
-                        color: $dark;
+                        color: #000000;
                         text-decoration: none;
                     }
                 }
@@ -116,11 +119,11 @@ footer.chalix-ed-container {
         display: block;
         font-size: 12px;
         line-height: 16px;
-        color: $light-dark;
+        color: #374151;
     }
 }
 
-body.chalix_theme-dark-theme {
+body.chalix-theme-dark-theme {
     .wrapper-footer {
         border-top: 1px solid $border-color-d;
         background: $body-bg-d;

@@ -9,6 +9,7 @@ header.global-header {
     border: none;
     padding: 0;
     overflow: visible;
+    background-color: #ffffff;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06), 0px 1px 3px 0px rgba(0, 0, 0, 0.10);
 
     &:after {
@@ -63,14 +64,14 @@ header.global-header {
                     font-weight: 500;
                     line-height: 22px;
                     padding: 20px 0;
-                    color: $light-dark;
+                    color: #000000;
                     margin: 0 16px 0 0;
                     border-bottom: 2px solid transparent;
 
                     &.active,
                     &:hover {
-                        color: $dark;
-                        border-bottom: 2px solid $primary;
+                        color: #000000;
+                        border-bottom: 2px solid #3494c8;
                     }
                 }
             }
@@ -83,8 +84,8 @@ header.global-header {
 
             .toggle-user-dropdown {
                 padding: 9px 15px;
-                background: $primary-light;
-                color: $primary;
+                background: #F2F7F8;
+                color: #3494c8;
                 font-size: 14px;
                 font-weight: 500;
                 line-height: 20px;
@@ -93,7 +94,7 @@ header.global-header {
 
                 &:after {
                     margin: 4px 0 0 4px;
-                    border: 2px solid #15376D;
+                    border: 2px solid #3494c8;
                     border-width: 2px 2px 0 0;
                     transform: rotate(135deg);
                     content: "";
@@ -134,11 +135,11 @@ header.global-header {
                         padding: 10px;
                         font-size: 14px;
                         line-height: 20px;
-                        color: $light-dark;
+                        color: #374151;
 
                         &:hover {
-                            background: $primary-light;
-                            color: $dark;
+                            background: #F2F7F8;
+                            color: #000000;
                             ;
                         }
                     }
@@ -179,7 +180,7 @@ header.global-header {
     z-index: 9999;
     margin: 0;
     border: none;
-    border-bottom: 2px solid $primary;
+    border-bottom: 2px solid #3494c8;
     width: 100%;
 
     .mobile-nav-link {
@@ -188,13 +189,13 @@ header.global-header {
             padding: 16px;
             font-size: 14px;
             line-height: 20px;
-            color: $light-dark;
+            color: #374151;
             border: none;
 
             &:hover,
             &.active {
-                background: $primary-light;
-                color: $dark;
+                background: #F2F7F8;
+                color: #000000;
             }
         }
     }
@@ -215,7 +216,20 @@ header.global-header {
 
 .theme-toggle-button {
     position: relative;
-    display: {% if CHALIX_THEME_ENABLE_DARK_TOGGLE %}flex{% else %}none{% endif %};
+
+    display: {
+        % if CHALIX_THEME_ENABLE_DARK_TOGGLE %
+    }
+
+    flex {
+        % else %
+    }
+
+    none {
+        % endif %
+    }
+
+    ;
     align-items: center;
     margin-right: 0 !important;
 
