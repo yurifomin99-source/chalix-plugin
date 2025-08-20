@@ -1,9 +1,4 @@
-
-export const CHALIX_THEME_PRIMARY_COLOR = '{{ CHALIX_THEME_PRIMARY_COLOR }}';
-export const CHALIX_THEME_ENABLE_DARK_TOGGLE = {{ CHALIX_THEME_ENABLE_DARK_TOGGLE }};
-
-
 if (typeof window !== 'undefined') {
-  document.documentElement.style.setProperty('--pgn-color-primary-500', '{{ CHALIX_THEME_PRIMARY_COLOR }}');
-  document.documentElement.style.setProperty('--pgn-color-primary-base', '{{ CHALIX_THEME_PRIMARY_COLOR }}');
+  document.documentElement.style.setProperty('--pgn-color-primary-500', '#3385ff');
+  document.documentElement.style.setProperty('--pgn-color-primary-base', '#3385ff');
 }
