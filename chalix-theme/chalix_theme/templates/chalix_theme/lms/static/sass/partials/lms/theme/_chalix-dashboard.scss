@@ -1,0 +1,270 @@
+/* Chalix Course Dashboard Styles - Based on Figma Design */
+
+/* Course Item Container */
+.course-item-chalix {
+    margin-bottom: 20px;
+}
+
+.chalix-course-container {
+    background: #ffffff;
+    border: 1px solid #b2b2b2;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.chalix-course-container:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chalix-course {
+    background: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Course Card Layout */
+.chalix-course-card {
+    display: flex;
+    flex-direction: column;
+    height: 255px;
+    position: relative;
+}
+
+/* Course Image Section */
+.chalix-course-image-container {
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+
+.chalix-course-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.chalix-course-link,
+.chalix-course-link-disabled {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.chalix-course-link-disabled {
+    opacity: 0.6;
+}
+
+/* Instructor Tag */
+.chalix-instructor-tag {
+    position: absolute;
+    top: 115px;
+    right: 15px;
+    background: #3494c8;
+    color: #ffffff;
+    padding: 7px 16px;
+    border-radius: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.4;
+    z-index: 10;
+}
+
+.chalix-instructor-label {
+    margin: 0;
+    padding: 0;
+}
+
+/* Course Content Section */
+.chalix-course-content {
+    padding: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Course Title */
+.chalix-course-title {
+    margin: 0 0 12px 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #000000;
+}
+
+.chalix-course-title-link {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.chalix-course-title-link:hover {
+    color: #3494c8;
+    text-decoration: underline;
+}
+
+.chalix-course-title-disabled,
+.chalix-course-title-text {
+    color: #000000;
+    font-weight: 600;
+}
+
+.chalix-course-title-disabled {
+    opacity: 0.6;
+}
+
+/* Progress Section */
+.chalix-progress-section {
+    margin-top: auto;
+    margin-bottom: 8px;
+}
+
+.chalix-progress-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 4px;
+}
+
+.chalix-unit-count {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #394047;
+    background: rgba(180, 180, 180, 0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Progress Bar */
+.chalix-progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background: rgba(120, 120, 120, 0.2);
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.chalix-progress-bar-track {
+    width: 100%;
+    height: 100%;
+    background: rgba(120, 120, 120, 0.2);
+    border-radius: 3px;
+    position: relative;
+}
+
+.chalix-progress-bar-fill {
+    height: 100%;
+    background: #3494c8;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* Additional Course Actions (Hidden by default) */
+.chalix-course-actions-container {
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 16px;
+}
+
+/* Course Details */
+.chalix-course-details {
+    margin: 0;
+    padding: 0;
+}
+
+/* Screen reader text */
+.sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Grid Layout for Course Cards */
+.listing-courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .listing-courses {
+        grid-template-columns: 1fr;
+    }
+
+    .chalix-course-card {
+        height: auto;
+        min-height: 255px;
+    }
+
+    .chalix-instructor-tag {
+        top: 90px;
+        right: 10px;
+        padding: 5px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chalix-course-content {
+        padding: 12px;
+    }
+
+    .chalix-instructor-tag {
+        top: 80px;
+        right: 8px;
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+}
+
+/* Color Theme Variables */
+:root {
+    --chalix-primary: #3494c8;
+    --chalix-secondary: #99abc8;
+    --chalix-background: #ffffff;
+    --chalix-border: #b2b2b2;
+    --chalix-text: #000000;
+    --chalix-text-muted: #394047;
+    --chalix-progress-bg: rgba(120, 120, 120, 0.2);
+}
+
+/* Dark theme support */
+[data-theme="dark"] {
+    --chalix-background: #1a1a1a;
+    --chalix-border: #444444;
+    --chalix-text: #ffffff;
+    --chalix-text-muted: #cccccc;
+}
+
+[data-theme="dark"] .chalix-course-container {
+    background: var(--chalix-background);
+    border-color: var(--chalix-border);
+    color: var(--chalix-text);
+}
+
+[data-theme="dark"] .chalix-course-title,
+[data-theme="dark"] .chalix-course-title-link,
+[data-theme="dark"] .chalix-course-title-text {
+    color: var(--chalix-text);
+}
+
+[data-theme="dark"] .chalix-unit-count {
+    color: var(--chalix-text-muted);
+    background: rgba(255, 255, 255, 0.1);
+}

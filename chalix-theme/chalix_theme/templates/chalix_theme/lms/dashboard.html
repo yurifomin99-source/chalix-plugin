@@ -1,0 +1,191 @@
+<%page expression_filter="h" />
+<%inherit file="main.html" />
+<%def name="online_help_token()">
+    <% return "learnerdashboard" %>
+</%def>
+<%namespace name='static' file='static_content.html' />
+<%! import pytz from datetime import datetime, timedelta from django.urls import reverse from django.utils.translation
+    import gettext as _ from django.template import RequestContext from common.djangoapps.entitlements.models import
+    CourseEntitlement from common.djangoapps.third_party_auth import pipeline from common.djangoapps.util.date_utils
+    import strftime_localized from opaque_keys.edx.keys import CourseKey from
+    openedx.core.djangoapps.content.course_overviews.models import CourseOverview from
+    openedx.core.djangoapps.site_configuration import helpers as configuration_helpers from
+    openedx.core.djangolib.js_utils import dump_js_escaped_json, js_escaped_string from openedx.core.djangolib.markup
+    import HTML, Text from common.djangoapps.student.models import CourseEnrollment %>
+
+    <% cert_name_short=settings.CERT_NAME_SHORT cert_name_long=settings.CERT_NAME_LONG %>
+
+        <%block name="pagetitle">${_("Dashboard")}</%block>
+        <%block name="bodyclass">view-dashboard is-authenticated</%block>
+
+        <%block name="header_extras">
+            % for template_name in ["donation"]:
+            <script type="text/template" id="${template_name}-tpl">
+  <%static:include path="dashboard/${template_name}.underscore" />
+</script>
+            % endfor
+        </%block>
+
+        <%block name="js_extra">
+            <script src="${static.url('js/commerce/credit.js')}"></script>
+            <script type="text/javascript" src="${static.url('js/learner_dashboard/certificate_api.js')}"></script>
+            <%static:js group='dashboard' />
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    edx.dashboard.legacy.init({
+                        dashboard: "${reverse('dashboard') | n, js_escaped_string}",
+                        signInUser: "${reverse('signin_user') | n, js_escaped_string}",
+                        changeEmailSettings: "${reverse('change_email_settings') | n, js_escaped_string}",
+                        sendAccountActivationEmail: "${reverse('send_account_activation_email') | n, js_escaped_string}"
+                    });
+                });
+            </script>
+            <%static:optional_include_mako file="dashboard_js_extra.html" is_theming_enabled="True" />
+        </%block>
+
+        <div class="dashboard-banner">
+            <%block name="dashboard_banner" />
+        </div>
+
+        <main id="main" aria-label="Content" tabindex="-1">
+            <div class="main-container">
+                <div class="my-courses" id="my-courses">
+                    % if display_sidebar_on_dashboard:
+                    <div class="sidebar">
+                        % if display_sidebar_account_activation_message:
+                        <div class="sidebar-item">
+                            <%include file="dashboard/_dashboard_prompt_midcourse_reverify.html" />
+                        </div>
+                        % endif
+                        % if len(course_entitlement_available_sessions) > 0:
+                        <div class="sidebar-item">
+                            <%include file="dashboard/_dashboard_entitlement_available_sessions.html" />
+                        </div>
+                        % endif
+                        % if len(course_entitlement_unavailable_sessions) > 0:
+                        <div class="sidebar-item">
+                            <%include file="dashboard/_dashboard_entitlement_unavailable_sessions.html" />
+                        </div>
+                        % endif
+                        % if len(course_entitlements) > 0:
+                        <div class="sidebar-item">
+                            <%include file="dashboard/_dashboard_course_entitlements.html" />
+                        </div>
+                        % endif
+                        % if show_courseware_links_for:
+                        <div class="sidebar-item">
+                            <%include file="dashboard/_dashboard_status_verification.html" />
+                        </div>
+                        % endif
+
+                        % if credit_statuses:
+                        <div class="sidebar-item">
+                            <%include file="dashboard/_dashboard_credit_statuses.html" />
+                        </div>
+                        % endif
+
+                        % if show_email_settings_for:
+                        <div class="sidebar-item">
+                            <%include file="dashboard/_dashboard_prompt_email_settings.html" />
+                        </div>
+                        % endif
+                        % if enterprise_message:
+                        <div class="sidebar-item">
+                            ${ enterprise_message | n, decode.utf8 }
+                        </div>
+                        % endif
+                        % if recovery_email_message:
+                        <div class="sidebar-item">
+                            ${ recovery_email_message | n, decode.utf8 }
+                        </div>
+                        % endif
+                        % if enterprise_learner_portal_enabled_message:
+                        <div class="sidebar-item">
+                            ${ enterprise_learner_portal_enabled_message | n, decode.utf8 }
+                        </div>
+                        % endif
+                    </div>
+                    % endif
+
+                    <div class="main-content">
+                        <header class="page-header has-secondary">
+                            <div class="page-header-main">
+                                <h1 class="page-title">${_("My learning")}</h1>
+                            </div>
+                            % if len(course_enrollments) > 0:
+                            <div class="page-header-secondary">
+                                <div class="header-actions">
+                                    % if username:
+                                    <span class="info-link">
+                                        <a id="link-view-profile"
+                                            href="${reverse('learner_profile', kwargs={'username': username})}">
+                                            ${_("View My Profile")}
+                                        </a>
+                                    </span>
+                                    % endif
+                                </div>
+                            </div>
+                            % endif
+                        </header>
+
+                        <div class="page-content">
+                            % if len(course_enrollments) > 0:
+                            <div class="listing-courses">
+                                <%include file="dashboard/_dashboard_course_listing_chalix.html" />
+                            </div>
+                            % else:
+                            <section class="empty-dashboard-message">
+                                % if display_dashboard_courses:
+                                % if discovery_courses_url:
+                                <p class="course-info-message">
+                                    ${Text(_("You are not enrolled in any courses yet.")).format(
+                                    discovery_link_tag=HTML('<a
+                                        href="{courses_link}">').format(courses_link=discovery_courses_url),
+                                        end_link_tag=HTML('</a>'),
+                                    )}
+                                </p>
+                                % if show_load_courseware_hint:
+                                <p class="course-info-message">
+                                    ${Text(_("Browse our course catalog to see what we have to offer.")).format(
+                                    discovery_link_tag=HTML('<a
+                                        href="{courses_link}">').format(courses_link=discovery_courses_url),
+                                        end_link_tag=HTML('</a>'),
+                                    )}
+                                </p>
+                                % endif
+                                % endif
+                                % else:
+                                <p class="course-info-message">
+                                    ${_("The courses you are enrolled in will be displayed here.")}
+                                </p>
+                                % endif
+                            </section>
+                            % endif
+
+                            % if staff_access and len(errored_courses) > 0:
+                            <div id="course-errors">
+                                <h2>${_("Course-loading errors")}</h2>
+
+                                % for course_dir, errors in errored_courses:
+                                <h3>${course_dir}</h3>
+                                <ul>
+                                    % for (msg, err) in errors:
+                                    <li>${msg}
+                                        <ul>
+                                            <li>
+                                                <pre>${err}</pre>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    % endfor
+                                </ul>
+                                % endfor
+                            </div>
+                            % endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <%include file="dashboard/_dashboard_course_unenroll_modal.html" />
