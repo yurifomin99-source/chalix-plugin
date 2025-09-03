@@ -9,49 +9,307 @@
     font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
 }
 
-/* Header overrides to match Figma design */
-header {
-    background-color: #ffffff !important;
-    border-bottom: 1px solid #9b9595 !important;
-    font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
+/* Chalix Header Styles - Based on Figma Design */
+.chalix-header {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-header .navbar-nav .nav-link {
-    color: #000000 !important;
-    font-weight: 500 !important;
-}
-
-header .navbar-nav .nav-link:hover,
-header .navbar-nav .nav-link:focus,
-header .navbar-nav .nav-link.active {
-    color: #000000 !important;
-    border-bottom: 2px solid #3494c8 !important;
-}
-
-header .btn-primary {
+/* Blue Top Header */
+.chalix-top-header {
     background-color: #3494c8 !important;
-    border-color: #3494c8 !important;
+    height: 60px;
+    width: 100%;
 }
 
-header .btn-primary:hover,
-header .btn-primary:focus {
-    background-color: #2a7ba8 !important;
-    border-color: #2a7ba8 !important;
+.chalix-top-header .header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 42px;
 }
 
-/* Footer overrides to match Figma design */
-footer {
-    background-color: #ffffff !important;
-    border-top: 1px solid #9b9595 !important;
-    color: #374151 !important;
+.chalix-top-header .platform-title {
+    flex: 1;
 }
 
-footer a {
-    color: #374151 !important;
+.chalix-top-header .platform-title span {
+    color: white !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    letter-spacing: 0.5px !important;
 }
 
-footer a:hover {
-    color: #000000 !important;
+.chalix-top-header .user-info-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.chalix-top-header .user-name {
+    color: white !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    letter-spacing: 0.5px !important;
+}
+
+.chalix-top-header .user-profile-icon {
+    background-color: #99abc8;
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chalix-top-header .user-profile-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.chalix-top-header .notification-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chalix-top-header .notification-icon img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Navigation Header */
+.chalix-nav-header {
+    background-color: white !important;
+    height: 60px;
+    border-bottom: 2px solid #b2b2b2 !important;
+}
+
+.chalix-nav-header .header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 48px;
+}
+
+.chalix-nav-header .main-navigation {
+    flex: 1;
+}
+
+.chalix-nav-header .nav-tabs {
+    display: flex;
+    gap: 0;
+}
+
+.chalix-nav-header .nav-tab {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 30px;
+    height: 43px;
+    text-decoration: none !important;
+    color: #394047 !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    letter-spacing: 0.5px !important;
+    border-right: 1px solid #394047;
+    transition: all 0.2s ease;
+}
+
+.chalix-nav-header .nav-tab:first-child {
+    padding-left: 15px;
+}
+
+.chalix-nav-header .nav-tab img {
+    width: 30px;
+    height: 30px;
+}
+
+.chalix-nav-header .nav-tab:hover,
+.chalix-nav-header .nav-tab.active {
+    background-color: #f8f9fa;
+    color: #3494c8 !important;
+}
+
+/* Search Bar */
+.chalix-nav-header .search-section {
+    margin-left: auto;
+}
+
+.chalix-nav-header .search-bar {
+    position: relative;
+    width: 398px;
+    height: 40px;
+    border: 2px solid #99abc8;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    background: white;
+}
+
+.chalix-nav-header .search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    letter-spacing: 0.5px !important;
+    color: rgba(73, 69, 79, 0.8) !important;
+    background: transparent;
+}
+
+.chalix-nav-header .search-bar input::placeholder {
+    color: rgba(73, 69, 79, 0.8) !important;
+}
+
+.chalix-nav-header .search-bar button {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chalix-nav-header .search-bar button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Chalix Footer Styles - Based on Figma Design */
+.chalix-footer {
+    background-color: #3563c1 !important;
+    margin-top: auto;
+}
+
+.chalix-footer footer {
+    background-color: #3563c1 !important;
+    padding: 0 !important;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chalix-footer .footer-content {
+    text-align: center;
+}
+
+.chalix-footer .footer-text p {
+    color: white !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    letter-spacing: 0.5px !important;
+    margin: 0 !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    .chalix-top-header .header-container,
+    .chalix-nav-header .header-container {
+        padding: 0 20px;
+    }
+
+    .chalix-top-header .platform-title span {
+        font-size: 16px !important;
+    }
+
+    .chalix-nav-header .nav-tabs {
+        display: none;
+    }
+
+    .chalix-nav-header .search-section .search-bar {
+        width: 280px;
+    }
+
+    .hamburger-menu {
+        display: block !important;
+    }
+}
+
+/* Hide original header elements */
+.global-header .main-header,
+.global-header .navbar-logo-header,
+.global-header .nav-links {
+    display: none !important;
+}
+
+/* Ensure full width for Chalix header */
+.chalix-header {
+    width: 100% !important;
+    position: relative !important;
+    z-index: 1000;
+}
+
+/* Fix header container layout */
+.chalix-header .header-container {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* Mobile menu adjustments */
+.mobile-menu {
+    background: white !important;
+    border-top: 1px solid #b2b2b2 !important;
+}
+
+.mobile-nav-item a {
+    color: #394047 !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    padding: 15px 20px !important;
+}
+
+.mobile-nav-item a:hover {
+    background-color: #f8f9fa !important;
+    color: #3494c8 !important;
+}
+
+/* Override any conflicting styles */
+.chalix-header * {
+    box-sizing: border-box;
+}
+
+/* Hamburger menu styling */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger-menu .line {
+    width: 24px;
+    height: 3px;
+    background-color: #394047;
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
 /* Apply CSS custom properties for consistent theming */
@@ -60,31 +318,6 @@ footer a:hover {
     --pgn-color-primary-base: #3494c8 !important;
     --bs-font-family-base: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
     --bs-body-font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
-}
-
-/* Mobile menu overrides */
-.mobile-menu {
-    border-bottom: 2px solid #3494c8 !important;
-}
-
-.mobile-nav-link a {
-    color: #374151 !important;
-}
-
-.mobile-nav-link a:hover,
-.mobile-nav-link a.active {
-    background: #F2F7F8 !important;
-    color: #000000 !important;
-}
-
-/* Dropdown overrides */
-.dropdown-user-menu .dropdown-item a {
-    color: #374151 !important;
-}
-
-.dropdown-user-menu .dropdown-item a:hover {
-    background: #F2F7F8 !important;
-    color: #000000 !important;
 }
 
 /* Button overrides for consistency */
