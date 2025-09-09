@@ -1,2 +1,118 @@
-<h1>${settings.PLATFORM_NAME}</h1>
-<p>{{ CHALIX_THEME_WELCOME_MESSAGE }}</p>
+<%page expression_filter="h" />
+<%namespace name='static' file='static_content.html' />
+<%! from django.utils.translation import gettext as _ 
+from openedx.core.djangolib.markup import HTML, Text %>
+
+    <!-- Main Landing Page Content -->
+    <div class="landing-page">
+        <!-- Features Title -->
+        <h2 class="landing-title">Các tính năng nổi bật của phần mềm học tập thông minh dành cho CC, VC</h2>
+
+        <!-- Features Container with grid layout -->
+        <div class="features-container">
+
+            <!-- Feature 1: AI dự đoán năng lực người học (left top) -->
+            <div class="feature-item feature-left-top">
+                <div class="feature-text">AI dự đoán năng lực<br />người học</div>
+            </div>
+
+            <!-- Feature 2: AI gợi ý khóa học phù hợp (center top) -->
+            <div class="feature-item feature-center-top">
+                <img src="http://localhost:3845/assets/b741795af5084dab4a009ba99432aed86949029e.png"
+                    alt="AI khóa học phù hợp" class="feature-image" />
+                <div class="feature-text">AI gợi ý khóa học phù hợp<br />với năng lực của CC, VC</div>
+            </div>
+
+            <!-- Feature 3: AI nhận diện cảm xúc người học (right top) -->
+            <div class="feature-item feature-right-top">
+                <img src="http://localhost:3845/assets/d084960c46721e40414ae84382f7e4a7096cb9de.png"
+                    alt="AI nhận diện cảm xúc" class="feature-image" />
+                <div class="feature-text">AI nhận diện cảm xúc người học<br />dựa trên khuôn mặt</div>
+            </div>
+
+            <!-- Feature 4: Cá nhân hóa người học (left bottom) -->
+            <div class="feature-item feature-left-bottom">
+                <img src="http://localhost:3845/assets/2af7e3e9fcb4079ec9b1eff6d146fb956b16b130.png"
+                    alt="Cá nhân hóa người học" class="feature-image" />
+                <div class="feature-text">Cá nhân hóa người học</div>
+            </div>
+
+            <!-- Feature 5: Hệ thống gợi ý xây dựng (center bottom) -->
+            <div class="feature-item feature-center-bottom">
+                <img src="http://localhost:3845/assets/9d2b36f90987cefdc740a03d3e5a2479a139fe7e.png"
+                    alt="Hệ thống gợi ý" class="feature-image" />
+                <div class="feature-text">Hệ thống gợi ý xây dựng, điều<br />chỉnh chương trình học,<br />bài giảng
+                </div>
+            </div>
+
+            <!-- Feature 6: Diễn đàn trao đổi (right bottom) -->
+            <div class="feature-item feature-right-bottom">
+                <img src="http://localhost:3845/assets/c2590d9115e2473a732bab8996d9f641b5db69fd.png"
+                    alt="Diễn đàn trao đổi" class="feature-image" />
+                <div class="feature-text">Diễn đàn trao đổi, chia sẻ kiến thức</div>
+            </div>
+        </div>
+
+        <!-- Process Section Title -->
+        <h2 class="process-title">Quy trình triển khai phần mềm học tập thông minh</h2>
+
+        <!-- Process Container -->
+        <div class="process-container">
+
+            <!-- Process Step 1 -->
+            <div class="process-step step-1">
+                <div class="step-circle">1</div>
+                <div class="step-content">
+                    <h3 class="step-title">Bộ Xây dựng</h3>
+                    <p class="step-description">Bộ Xây dựng gửi thông báo<br />cho cơ quan sử dụng phần<br />mềm học tập
+                        thông minh</p>
+                </div>
+            </div>
+
+            <!-- Arrow 1 -->
+            <svg class="arrow arrow-1" viewBox="0 0 180 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 7.5H179M179 7.5L172 1M179 7.5L172 14" stroke="#3494C8" stroke-width="2" />
+            </svg>
+
+            <!-- Process Step 2 -->
+            <div class="process-step step-2">
+                <div class="step-circle">2</div>
+                <div class="step-content">
+                    <h3 class="step-title">Cơ quan</h3>
+                    <p class="step-description">Cơ quan thuộc Bộ Xây dựng gửi hướng dẫn sử dụng phần mềm và yêu cầu CC,
+                        VC hoàn thành nhiệm vụ học tập theo Nghị định NĐ171/2025/NĐ-CP</p>
+                </div>
+            </div>
+
+            <!-- Arrow 2 -->
+            <svg class="arrow arrow-2" viewBox="0 0 202 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 7.5H201M201 7.5L194 1M201 7.5L194 14" stroke="#3494C8" stroke-width="2" />
+            </svg>
+
+            <!-- Process Step 3 -->
+            <div class="process-step step-3">
+                <div class="step-circle">3</div>
+                <div class="step-content">
+                    <h3 class="step-title">CC, VC</h3>
+                    <p class="step-description">CC, VC tham gia các khóa học phù hợp với sở thích, vị trí việc làm cá
+                        nhân, được học tập mọi lúc, mọi nơi, tiết kiệm được thời gian, hoàn thành nhiệm vụ học tập.</p>
+                </div>
+            </div>
+
+            <!-- Arrow 3 -->
+            <svg class="arrow arrow-3" viewBox="0 0 180 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 7.5H179M179 7.5L172 1M179 7.5L172 14" stroke="#3494C8" stroke-width="2" />
+            </svg>
+
+            <!-- Process Step 4 -->
+            <div class="process-step step-4">
+                <div class="step-circle">4</div>
+                <div class="step-content">
+                    <h3 class="step-title">Cá nhân hóa học tập</h3>
+                    <p class="step-description">AI gợi ý khóa học phù hợp với từng CC, VC theo thông tin cá nhân, cảm
+                        xúc, dữ liệu tương tác trực tuyến. AI dự đoán năng lực học tập của cá nhân, đo lường hoàn thành
+                        nhiệm vụ học tập tự động.</p>
+                </div>
+            </div>
+        </div>
+    </div>

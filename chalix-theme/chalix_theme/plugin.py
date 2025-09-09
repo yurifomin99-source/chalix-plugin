@@ -120,14 +120,14 @@ for mfe in chalix_theme_styled_mfes:
             (
                 f"mfe-dockerfile-post-npm-install-{mfe}",
                 """
-RUN npm install @edly-io/indigo-frontend-component-footer@^3.0.0
-RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^4.0.0'
+RUN npm install '@chalix/frontend-component-footer@git+https://github.com/Alimento-Team/chalix-mfe-component-footer.git#release'
+RUN npm install '@chalix/frontend-component-header@git+https://github.com/Alimento-Team/chalix-mfe-component-header.git#release'
 """,
             ),
             (
                 f"mfe-env-config-runtime-definitions-{mfe}",
                 """
-const { default: ChalixThemeFooter } = await import('@edly-io/indigo-frontend-component-footer');
+const { default: ChalixThemeFooter } = await import('@chalix/frontend-component-footer');
 """,
             ),
         ]

@@ -13,6 +13,741 @@ section.home {
     max-width: 100%;
 }
 
+// Landing Page Implementation with Grid Layout
+.landing-page {
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    position: relative;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 auto;
+    padding: 40px 20px;
+
+    // Main title
+    .landing-title {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        margin: 40px auto 20px auto;
+        font-family: 'Inter', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24.2px;
+        color: #0054a6;
+        max-width: 1200px;
+    }
+
+    // Features Container - Grid Layout
+    .features-container {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 40px 20px !important;
+        height: auto !important;
+        margin: 80px auto 60px auto !important;
+        max-width: 1200px !important;
+        position: relative !important;
+        background: rgba(0, 255, 0, 0.1) !important;
+        /* Debug: light green background */
+
+        .feature-item,
+        .feature-left-top,
+        .feature-center-top,
+        .feature-right-top,
+        .feature-left-bottom,
+        .feature-center-bottom,
+        .feature-right-bottom {
+            position: relative !important;
+            width: 100% !important;
+            height: auto !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            background: rgba(255, 0, 0, 0.1) !important;
+            /* Debug: light red background */
+            border: 2px solid blue !important;
+            /* Debug: blue border */
+
+            .feature-image {
+                width: 280px !important;
+                height: 160px !important;
+                margin-bottom: 14px !important;
+                border-radius: 8px !important;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+                object-fit: cover !important;
+            }
+
+            .feature-text {
+                width: 100% !important;
+                font-family: 'Inter', sans-serif !important;
+                font-size: 16px !important;
+                font-weight: 500 !important;
+                line-height: 19.36px !important;
+                color: #0054a6 !important;
+                margin: 0 !important;
+            }
+        }
+
+        // Specific order to match Figma design
+        .feature-left-top {
+            order: 1 !important;
+        }
+
+        .feature-center-top {
+            order: 2 !important;
+        }
+
+        .feature-right-top {
+            order: 3 !important;
+        }
+
+        .feature-left-bottom {
+            order: 4 !important;
+        }
+
+        .feature-center-bottom {
+            order: 5 !important;
+        }
+
+        .feature-right-bottom {
+            order: 6 !important;
+        }
+    }
+
+}
+
+// Process Section Title
+
+// Feature 2: AI gợi ý khóa học phù hợp
+.feature-2 {
+    position: absolute;
+    left: 556px;
+    top: 80px;
+    width: 329px;
+    height: 202px;
+
+    .feature-image {
+        width: 262px;
+        height: 160px;
+        left: 34px;
+        top: 0px;
+        position: absolute;
+        border-radius: 8px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        object-fit: cover;
+    }
+
+    .feature-text {
+        position: absolute;
+        left: 34px;
+        top: 174px;
+        width: 260px;
+        height: 40px;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19.36px;
+        text-align: center;
+        color: #0054a6;
+    }
+}
+
+// Feature 3: AI nhận diện cảm xúc người học
+.feature-3 {
+    position: absolute;
+    left: 965px;
+    top: 80px;
+    width: 329px;
+    height: 190px;
+
+    .feature-image {
+        width: 222px;
+        height: 148px;
+        left: 71px;
+        top: 0px;
+        position: absolute;
+        border-radius: 8px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        object-fit: cover;
+    }
+
+    .feature-text {
+        position: absolute;
+        left: 28px;
+        top: 162px;
+        width: 272px;
+        height: 40px;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19.36px;
+        text-align: center;
+        color: #0054a6;
+    }
+}
+
+// Feature 4: Cá nhân hóa người học
+.feature-4 {
+    position: absolute;
+    left: 147px;
+    top: 358px;
+    width: 329px;
+    height: 181px;
+
+    .feature-image {
+        width: 279px;
+        height: 161px;
+        left: 58px;
+        top: 0px;
+        position: absolute;
+        border-radius: 8px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        object-fit: cover;
+    }
+
+    .feature-text {
+        position: absolute;
+        left: 97px;
+        top: 161px;
+        width: 181px;
+        height: 20px;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19.36px;
+        text-align: center;
+        color: #0054a6;
+    }
+}
+
+// Feature 5: Hệ thống gợi ý xây dựng
+.feature-5 {
+    position: absolute;
+    left: 556px;
+    top: 358px;
+    width: 329px;
+    height: 200px;
+
+    .feature-image {
+        width: 267px;
+        height: 140px;
+        left: 31px;
+        top: 0px;
+        position: absolute;
+        border-radius: 8px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        object-fit: cover;
+    }
+
+    .feature-text {
+        position: absolute;
+        left: 45px;
+        top: 154px;
+        width: 238px;
+        height: 60px;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19.36px;
+        text-align: center;
+        color: #0054a6;
+    }
+}
+
+// Feature 6: Diễn đàn trao đổi
+.feature-6 {
+    position: absolute;
+    left: 965px;
+    top: 358px;
+    width: 329px;
+    height: 160px;
+
+    .feature-image {
+        width: 244px;
+        height: 140px;
+        left: 54px;
+        top: 0px;
+        position: absolute;
+        border-radius: 8px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        object-fit: cover;
+    }
+
+    .feature-text {
+        position: absolute;
+        left: 67px;
+        top: 154px;
+        width: 218px;
+        height: 20px;
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19.36px;
+        text-align: center;
+        color: #0054a6;
+    }
+}
+
+// Process Section Title
+.process-title {
+    position: absolute;
+    left: 452px;
+    top: 600px;
+    width: 536px;
+    height: 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24.2px;
+    text-align: center;
+    color: #0054a6;
+}
+
+// Process Container
+.process-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+
+    // Process Step 1
+    .step-1 {
+        position: absolute;
+        left: 114px;
+        top: 680px;
+        width: 272px;
+        height: 203px;
+
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            left: 59px;
+            top: 0px;
+            position: absolute;
+            background: #3494c8;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .step-content {
+            position: absolute;
+            left: 0px;
+            top: 80px;
+            width: 272px;
+            height: 123px;
+
+            .step-title {
+                width: 129px;
+                height: 25px;
+                left: 59px;
+                top: 0px;
+                position: absolute;
+                font-family: 'Inter', sans-serif;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 24.2px;
+                color: #0054a6;
+            }
+
+            .step-description {
+                width: 272px;
+                height: 78px;
+                left: 0px;
+                top: 45px;
+                position: absolute;
+                font-family: 'Inter', sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 21.78px;
+                color: #0674b0;
+                margin: 0;
+            }
+        }
+    }
+
+    // Arrow 1
+    .arrow-1 {
+        position: absolute;
+        left: 416px;
+        top: 710px;
+        width: 180px;
+        height: 15px;
+    }
+
+    // Process Step 2
+    .step-2 {
+        position: absolute;
+        left: 626px;
+        top: 680px;
+        width: 272px;
+        height: 263px;
+
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            left: 106px;
+            top: 0px;
+            position: absolute;
+            background: #3494c8;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .step-content {
+            position: absolute;
+            left: 0px;
+            top: 80px;
+            width: 272px;
+            height: 183px;
+
+            .step-title {
+                width: 76px;
+                height: 25px;
+                left: 98px;
+                top: 0px;
+                position: absolute;
+                font-family: 'Inter', sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 24.2px;
+                color: #0054a6;
+            }
+
+            .step-description {
+                width: 272px;
+                height: 138px;
+                left: 0px;
+                top: 45px;
+                position: absolute;
+                font-family: 'Inter', sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 21.78px;
+                color: #0674b0;
+                margin: 0;
+            }
+        }
+    }
+
+    // Arrow 2
+    .arrow-2 {
+        position: absolute;
+        left: 928px;
+        top: 710px;
+        width: 202px;
+        height: 15px;
+    }
+
+    // Process Step 3
+    .step-3 {
+        position: absolute;
+        left: 1160px;
+        top: 680px;
+        width: 272px;
+        height: 243px;
+
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            left: 106px;
+            top: 0px;
+            position: absolute;
+            background: #3494c8;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .step-content {
+            position: absolute;
+            left: 0px;
+            top: 80px;
+            width: 272px;
+            height: 163px;
+
+            .step-title {
+                width: 76px;
+                height: 25px;
+                left: 98px;
+                top: 0px;
+                position: absolute;
+                font-family: 'Inter', sans-serif;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 24.2px;
+                color: #0054a6;
+            }
+
+            .step-description {
+                width: 272px;
+                height: 118px;
+                left: 0px;
+                top: 45px;
+                position: absolute;
+                font-family: 'Inter', sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 21.78px;
+                color: #0674b0;
+                margin: 0;
+            }
+        }
+    }
+
+    // Arrow 3
+    .arrow-3 {
+        position: absolute;
+        left: 630px;
+        top: 980px;
+        width: 180px;
+        height: 15px;
+    }
+
+    // Process Step 4
+    .step-4 {
+        position: absolute;
+        left: 340px;
+        top: 950px;
+        width: 272px;
+        height: 243px;
+
+        .step-circle {
+            width: 60px;
+            height: 60px;
+            left: 106px;
+            top: 0px;
+            position: absolute;
+            background: #3494c8;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .step-content {
+            position: absolute;
+            left: 0px;
+            top: 80px;
+            width: 272px;
+            height: 163px;
+
+            .step-title {
+                width: 170px;
+                height: 25px;
+                left: 51px;
+                top: 0px;
+                position: absolute;
+                font-family: 'Inter', sans-serif;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 24.2px;
+                color: #0054a6;
+            }
+
+            .step-description {
+                width: 272px;
+                height: 118px;
+                left: 0px;
+                top: 45px;
+                position: absolute;
+                font-family: 'Inter', sans-serif;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 21.78px;
+                color: #0674b0;
+                margin: 0;
+            }
+        }
+    }
+
+    // Arrows styling
+    .arrow {
+        fill: none;
+
+        path {
+            stroke: #3494c8;
+            stroke-width: 2;
+        }
+    }
+}
+
+// Responsive Design for Landing Page
+@media (max-width: 1440px) {
+    .landing-page {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+
+        .landing-title {
+            position: relative;
+            left: auto;
+            top: auto;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px 20px;
+            height: auto;
+            margin-bottom: 60px;
+
+            .feature-item,
+            .feature-1,
+            .feature-2,
+            .feature-3,
+            .feature-4,
+            .feature-5,
+            .feature-6 {
+                position: relative;
+                left: auto !important;
+                top: auto !important;
+                width: 100% !important;
+                height: auto !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .feature-image {
+                    position: relative !important;
+                    left: auto !important;
+                    top: auto !important;
+                    width: 200px !important;
+                    height: 120px !important;
+                    margin-bottom: 14px;
+                }
+
+                .feature-text {
+                    position: relative !important;
+                    left: auto !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    height: auto !important;
+                }
+            }
+        }
+
+        .process-title {
+            position: relative;
+            left: auto;
+            top: auto;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .process-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+
+            .process-step,
+            .step-1,
+            .step-2,
+            .step-3,
+            .step-4 {
+                position: relative !important;
+                left: auto !important;
+                top: auto !important;
+                width: 100% !important;
+                max-width: 300px;
+                height: auto !important;
+                margin-bottom: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .step-circle {
+                    position: relative !important;
+                    left: auto !important;
+                    top: auto !important;
+                    margin-bottom: 20px;
+                }
+
+                .step-content {
+                    position: relative !important;
+                    left: auto !important;
+                    top: auto !important;
+                    width: 100% !important;
+                    height: auto !important;
+                    text-align: center;
+
+                    .step-title {
+                        position: relative !important;
+                        left: auto !important;
+                        top: auto !important;
+                        width: 100% !important;
+                        height: auto !important;
+                        margin-bottom: 15px;
+                    }
+
+                    .step-description {
+                        position: relative !important;
+                        left: auto !important;
+                        top: auto !important;
+                        width: 100% !important;
+                        height: auto !important;
+                    }
+                }
+            }
+
+            .arrow,
+            .arrow-1,
+            .arrow-2,
+            .arrow-3 {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .landing-page {
+        .features-container {
+            grid-template-columns: 1fr;
+            gap: 30px;
+
+            .feature-item,
+            .feature-1,
+            .feature-2,
+            .feature-3,
+            .feature-4,
+            .feature-5,
+            .feature-6 {
+                .feature-image {
+                    width: 100% !important;
+                    max-width: 280px !important;
+                    height: 160px !important;
+                }
+            }
+        }
+    }
+}
+
+// Original existing styles for search functionality
 .global-header .nav-links .secondary {
     .btn-holder {
         letter-spacing: -.32em;
@@ -56,6 +791,7 @@ section.home {
                     margin: 0 0 25px;
                     text-align: left;
                     padding: 0;
+                    display: none; // Hide the original heading group
 
                     @include media-breakpoint-up(sm) {
                         margin: 0 0 45px;
@@ -87,6 +823,356 @@ section.home {
 
                 .course-search {
                     padding: 0;
+                    display: none; // Hide the search for now to match design
+
+                    .search-field-wrapper {
+                        display: flex;
+
+                        .button-holder {
+                            button {
+                                position: static;
+                                margin: 0 0 0 16px;
+                                min-width: 90px;
+                                color: #fff;
+                                font-size: 16px;
+                                font-weight: 500;
+                                line-height: 26px;
+                                text-align: center;
+                                padding: 6px;
+                                height: 38px;
+                                border-radius: 6px;
+                                background: $primary;
+                                font-family: $font-family-title;
+                                border: none;
+
+                                @include media-breakpoint-up(sm) {
+                                    min-width: 100px;
+                                }
+
+                                &:hover {
+                                    background: $primary;
+                                    opacity: .8;
+                                }
+                            }
+                        }
+
+                        .input-holder {
+                            flex-grow: 1;
+                            border-radius: 6px;
+                            background: $primary-light;
+                            padding: 0 0 0 33px;
+                            position: relative;
+                            display: block;
+
+                            svg {
+                                position: absolute;
+                                left: 12px;
+                                font-size: 20px;
+                                top: 10px;
+                            }
+
+                            input {
+                                border: none;
+                                box-shadow: none;
+                                height: 38px;
+                                width: 100%;
+                                background: none;
+                                outline: none;
+                                font-size: 14px;
+                                line-height: 20px;
+                                padding: 9px 10px;
+
+                                &:focus,
+                                &:focus-visible {
+                                    outline: revert;
+                                    outline-width: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+body.chalix_theme-dark-theme {
+    h1 {
+        color: $text-color-d;
+    }
+
+    p a:not(.btn),
+    a:not(.btn) {
+        color: $primary-d;
+
+        &:hover,
+        &:focus,
+        &:active,
+        a:visited:not(.btn):focus {
+            color: $primary-d;
+        }
+    }
+
+    .global-header .nav-links .secondary {
+        .btn-holder {
+            .nav-item {
+                .btn {
+                    &.sign-in-btn {
+                        background: $primary-d;
+                        color: $btn-color-d;
+                        border-color: $primary-d;
+                    }
+
+                    &.register-btn {
+                        color: $text-color-d;
+                        border-color: $text-color-d;
+                        background: none;
+                    }
+                }
+            }
+        }
+    }
+
+    #main .home.style-logout {
+        header {
+            background: none;
+
+            .outer-wrapper {
+                .title {
+                    .heading-group {
+                        h1 {
+                            color: $text-color-d;
+                        }
+
+                        p {
+                            color: $text-color-primary;
+                        }
+                    }
+
+                    .course-search {
+                        .search-field-wrapper {
+                            .button-holder {
+                                button {
+                                    color: $btn-color-d;
+                                    background: $primary-d;
+                                    border: none;
+
+                                    &:hover {
+                                        color: $btn-color-d;
+                                        background: $primary-d;
+                                    }
+                                }
+                            }
+
+                            .input-holder {
+                                background: $primary-light-d;
+
+                                svg {
+                                    path {
+                                        fill: $text-color-primary;
+                                    }
+                                }
+
+                                input {
+                                    color: $text-color-d;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 1200px) {
+    .landing-content {
+        .features-section {
+            padding: 60px 40px 40px;
+
+            .features-title {
+                margin-left: 40px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 40px 20px;
+
+                .feature-item {
+                    .feature-image {
+                        width: 200px !important;
+                        height: 120px !important;
+                        margin-left: 0 !important;
+                    }
+                }
+            }
+        }
+
+        .process-section {
+            padding: 40px 30px 0;
+
+            .process-steps {
+                flex-wrap: wrap;
+
+                .process-arrow {
+                    display: none; // Hide arrows on smaller screens
+                }
+
+                .process-step {
+                    margin-bottom: 40px;
+                    flex: 1 1 300px;
+
+                    &:nth-child(1) {
+                        margin-left: 0;
+                        text-align: center;
+
+                        .step-content .step-title {
+                            text-align: center;
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .landing-content {
+        padding: 20px 0 0 0;
+
+        .features-section {
+            padding: 40px 20px 20px;
+
+            .features-title {
+                font-size: 18px;
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+
+                .feature-item {
+                    .feature-image {
+                        width: 100% !important;
+                        max-width: 280px !important;
+                        height: 160px !important;
+                        margin-left: 0 !important;
+                    }
+                }
+            }
+        }
+
+        .process-section {
+            padding: 20px 20px 0;
+
+            .process-title {
+                font-size: 18px;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+
+                .process-step {
+                    max-width: 100%;
+                    margin-bottom: 30px;
+                    text-align: center;
+
+                    &:nth-child(1) {
+                        margin-left: 0;
+
+                        .step-content .step-title {
+                            text-align: center;
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Original existing styles for search functionality
+.global-header .nav-links .secondary {
+    .btn-holder {
+        letter-spacing: -.32em;
+        margin: 0 -7px;
+
+        .nav-item {
+            letter-spacing: normal;
+            margin: 0 7px;
+            padding: 12px 0;
+
+            .btn {
+                line-height: 20px;
+                padding: 9px 17px;
+                font-size: 14px;
+                border-radius: 6px;
+                font-weight: 500;
+                display: block;
+            }
+        }
+    }
+}
+
+#main .home.style-logout {
+    header {
+        background: none;
+        overflow: visible;
+
+        .outer-wrapper {
+            .title {
+                width: 100%;
+                float: none;
+                margin: 0;
+                padding: 30px 0 0;
+                min-height: 20px;
+
+                @include media-breakpoint-up(sm) {
+                    padding: 50px 0 0;
+                }
+
+                .heading-group {
+                    margin: 0 0 25px;
+                    text-align: left;
+                    padding: 0;
+                    display: none; // Hide the original heading group
+
+                    @include media-breakpoint-up(sm) {
+                        margin: 0 0 45px;
+                    }
+
+                    h1 {
+                        color: #111827;
+                        font-size: 20px;
+                        font-weight: 700;
+                        line-height: 30px;
+                        margin: 0 0 8px;
+                        text-align: left;
+
+                        @include media-breakpoint-up(md) {
+                            font-size: 24px;
+                            font-weight: 700;
+                            margin: 0 0 12px;
+                        }
+                    }
+
+                    p {
+                        font-size: 16px;
+                        line-height: 20px;
+                        color: #515661;
+                        font-style: normal;
+                        margin: 0;
+                    }
+                }
+
+                .course-search {
+                    padding: 0;
+                    display: none; // Hide the search for now to match design
 
                     .search-field-wrapper {
                         display: flex;
