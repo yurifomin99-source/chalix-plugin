@@ -5,6 +5,14 @@ from openedx.core.djangolib.markup import HTML, Text %>
 
     <!-- Main Landing Page Content -->
     <div class="landing-page">
+        <style>
+            /* Ensure the themed process flow is horizontal on wide screens and stacks on small screens */
+            .process-container { display: flex; align-items: center; justify-content: space-between; gap: 20px; max-width: 1200px; margin: 40px auto; padding: 0 16px; }
+            .process-step { flex: 1 1 0; min-width: 140px; max-width: 260px; text-align: center; }
+            .process-arrow { flex: 0 0 60px; display: flex; align-items: center; justify-content: center; }
+            .process-arrow svg, .arrow { width: 36px; height: 12px; }
+            @media (max-width: 900px) { .process-container { flex-direction: column; gap: 32px; } .process-arrow, .arrow { display: none; } }
+        </style>
         <!-- Features Title -->
         <h2 class="landing-title">Các tính năng nổi bật của phần mềm học tập thông minh dành cho CC, VC</h2>
 
