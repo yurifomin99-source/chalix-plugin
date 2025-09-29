@@ -58,78 +58,21 @@
                                             <h2 class="hd hd-2 sr" id="details-heading-${enrollment.course_id}">
                                                 ${_('Course details')}</h2>
 
-                                            <div class="chalix-course-card">
-                                                <!-- Course Image with Instructor Tag -->
-                                                <div class="chalix-course-image-container" aria-hidden="true">
-                                                    % if show_courseware_link and not is_unfulfilled_entitlement:
-                                                    % if not is_course_expired:
-                                                    <a href="${course_target}" data-course-key="${enrollment.course_id}"
-                                                        class="chalix-course-link" tabindex="-1">
-                                                        <img src="${course_overview.image_urls['small']}"
-                                                            class="chalix-course-image"
-                                                            alt="${_('{course_number} {course_name} Home Page').format(course_number=course_overview.number, course_name=course_overview.display_name_with_default)}" />
-                                                    </a>
-                                                    % else:
-                                                    <a class="chalix-course-link-disabled">
-                                                        <img src="${course_overview.image_urls['small']}"
-                                                            class="chalix-course-image"
-                                                            alt="${_('{course_number} {course_name} Cover Image').format(course_number=course_overview.number, course_name=course_overview.display_name_with_default)}" />
-                                                    </a>
-                                                    % endif
-                                                    % else:
-                                                    <a class="chalix-course-link">
-                                                        <img src="${course_overview.image_urls['small']}"
-                                                            class="chalix-course-image"
-                                                            alt="${_('{course_number} {course_name} Cover Image').format(course_number=course_overview.number, course_name=course_overview.display_name_with_default)}" />
-                                                    </a>
-                                                    % endif
-
-                                                    <!-- Instructor Tag (only show if user is instructor/staff) -->
-                                                    % if is_user_instructor:
-                                                    <div class="chalix-instructor-tag">
-                                                        <span class="chalix-instructor-label">Giảng dạy</span>
-                                                    </div>
-                                                    % endif
-                                                </div>
-
-                                                <!-- Course Title -->
-                                                <div class="chalix-course-content">
-                                                    <h3 class="chalix-course-title"
-                                                        id="course-title-${enrollment.course_id}">
-                                                        % if show_courseware_link and not is_unfulfilled_entitlement:
-                                                        % if not is_course_expired:
-                                                        <a data-course-key="${enrollment.course_id}"
-                                                            href="${course_target}"
-                                                            class="chalix-course-title-link">${course_overview.display_name_with_default}</a>
-                                                        % else:
-                                                        <span
-                                                            class="chalix-course-title-disabled">${course_overview.display_name_with_default}</span>
-                                                        % endif
-                                                        % else:
-                                                        <span
-                                                            class="chalix-course-title-text">${course_overview.display_name_with_default}</span>
-                                                        % endif
-                                                    </h3>
-
-                                                    <!-- Progress Bar with Unit Count -->
-                                                    <div class="chalix-progress-section">
-                                                        <div class="chalix-progress-header">
-                                                            <div class="chalix-progress-info">
-                                                                <span
-                                                                    class="chalix-unit-count">${completed_units}/${total_units}</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="chalix-progress-bar-container">
-                                                            <div class="chalix-progress-bar-track">
-                                                                <div class="chalix-progress-bar-fill"
-                                                                    style="width: ${progress_percentage}%;"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Additional Course Actions (hidden by default, expand on hover if needed) -->
+                            <div class="chalix-course-card" data-course-url="${course_target}" data-course-key="${enrollment.course_id}"
+                                % if show_courseware_link and not is_unfulfilled_entitlement and not is_course_expired:
+                                onclick="window.location.href='${course_target}'" style="cursor: pointer;"
+                                % endif
+                                >
+                                <!-- Course Image with Instructor Tag -->
+                                <div class="chalix-course-image-container" aria-hidden="true">
+                                    % if show_courseware_link and not is_unfulfilled_entitlement:
+                                    % if not is_course_expired:
+                                    <a href="${course_target}" data-course-key="${enrollment.course_id}"
+                                        class="chalix-course-link" tabindex="-1">
+                                        <img src="${course_overview.image_urls['small']}"
+                                            class="chalix-course-image"
+                                            alt="${_('{course_number} {course_name} Home Page').format(course_number=course_overview.number, course_name=course_overview.display_name_with_default)}" />
+                                    </a>                                            <!-- Additional Course Actions (hidden by default, expand on hover if needed) -->
                                             <div class="chalix-course-actions-container" style="display: none;">
                                                 <div class="wrapper-course-info-actions">
                                                     <div class="wrapper-course-info-row">
@@ -592,3 +535,52 @@
 
             </%static:require_module_async>
             %endif
+
+            <!-- Chalix Course Card Interaction Script -->
+            <script>
+                (function() {
+                    // Enhance course card interactivity
+                    var courseCard = document.getElementById('course-card-${course_card_index}');
+                    if (courseCard) {
+                        var chalixCourseCard = courseCard.querySelector('.chalix-course-card');
+                        var courseUrl = '${course_target}';
+                        
+                        if (chalixCourseCard && courseUrl && courseUrl !== '#' && courseUrl !== '') {
+                            // Add hover effects
+                            chalixCourseCard.addEventListener('mouseenter', function() {
+                                this.style.transform = 'translateY(-2px)';
+                                this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+                                this.style.cursor = 'pointer';
+                            });
+                            
+                            chalixCourseCard.addEventListener('mouseleave', function() {
+                                this.style.transform = 'translateY(0)';
+                                this.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+                            });
+                            
+                            // Add click handler for entire card
+                            chalixCourseCard.addEventListener('click', function(e) {
+                                // Don't trigger if clicking on a direct link or button
+                                if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a') || e.target.closest('button')) {
+                                    return;
+                                }
+                                
+                                // Navigate to course
+                                window.location.href = courseUrl;
+                            });
+                            
+                            // Add keyboard navigation
+                            chalixCourseCard.setAttribute('tabindex', '0');
+                            chalixCourseCard.setAttribute('role', 'button');
+                            chalixCourseCard.setAttribute('aria-label', 'Open course: ${course_overview.display_name_with_default}');
+                            
+                            chalixCourseCard.addEventListener('keydown', function(e) {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    window.location.href = courseUrl;
+                                }
+                            });
+                        }
+                    }
+                })();
+            </script>

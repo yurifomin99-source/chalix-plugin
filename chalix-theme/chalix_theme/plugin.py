@@ -203,15 +203,7 @@ for mfe in chalix_theme_styled_mfes:
                     RenderWidget: <ChalixThemeFooter />
                 },
             },
-            {
-                op: PLUGIN_OPERATIONS.Insert,
-                widget: {
-                    id: 'read_theme_cookie',
-                    type: DIRECT_PLUGIN,
-                    priority: 2,
-                    RenderWidget: AddDarkTheme,
-                },
-            },
+
   """,
         ),
     )

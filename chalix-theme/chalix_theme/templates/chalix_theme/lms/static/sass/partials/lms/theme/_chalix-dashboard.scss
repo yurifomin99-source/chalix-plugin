@@ -1,270 +1,383 @@
-/* Chalix Course Dashboard Styles - Based on Figma Design */
+/* Figma Design Overrides for Chalix Theme */
 
-/* Course Item Container */
-.course-item-chalix {
-    margin-bottom: 20px;
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+/* Global font family override */
+* {
+    font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
 }
 
+/* Chalix Header Styles - Based on Figma Design */
+.chalix-header {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Blue Top Header */
+.chalix-top-header {
+    background-color: #3494c8 !important;
+    height: 60px;
+    width: 100%;
+}
+
+.chalix-top-header .header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 42px;
+}
+
+.chalix-top-header .platform-title {
+    flex: 1;
+}
+
+.chalix-top-header .platform-title span {
+    color: white !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    letter-spacing: 0.5px !important;
+}
+
+.chalix-top-header .user-info-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.chalix-top-header .user-name {
+    color: white !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    letter-spacing: 0.5px !important;
+}
+
+.chalix-top-header .user-profile-icon {
+    background-color: #99abc8;
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chalix-top-header .user-profile-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.chalix-top-header .notification-icon {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chalix-top-header .notification-icon img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Navigation Header */
+.chalix-nav-header {
+    background-color: white !important;
+    height: 60px;
+    border-bottom: 2px solid #b2b2b2 !important;
+}
+
+.chalix-nav-header .header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 48px;
+}
+
+.chalix-nav-header .main-navigation {
+    flex: 1;
+}
+
+.chalix-nav-header .nav-tabs {
+    display: flex;
+    gap: 0;
+}
+
+.chalix-nav-header .nav-tab {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0 30px;
+    height: 43px;
+    text-decoration: none !important;
+    color: #394047 !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    letter-spacing: 0.5px !important;
+    border-right: 1px solid #394047;
+    transition: all 0.2s ease;
+}
+
+.chalix-nav-header .nav-tab:first-child {
+    padding-left: 15px;
+}
+
+.chalix-nav-header .nav-tab img {
+    width: 30px;
+    height: 30px;
+}
+
+.chalix-nav-header .nav-tab:hover,
+.chalix-nav-header .nav-tab.active {
+    background-color: #f8f9fa;
+    color: #3494c8 !important;
+}
+
+/* Search Bar */
+.chalix-nav-header .search-section {
+    margin-left: auto;
+}
+
+.chalix-nav-header .search-bar {
+    position: relative;
+    width: 398px;
+    height: 40px;
+    border: 2px solid #99abc8;
+    border-radius: 28px;
+    display: flex;
+    align-items: center;
+    background: white;
+}
+
+.chalix-nav-header .search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 0 20px;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    letter-spacing: 0.5px !important;
+    color: rgba(73, 69, 79, 0.8) !important;
+    background: transparent;
+}
+
+.chalix-nav-header .search-bar input::placeholder {
+    color: rgba(73, 69, 79, 0.8) !important;
+}
+
+.chalix-nav-header .search-bar button {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chalix-nav-header .search-bar button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Chalix Footer Styles - Based on Figma Design */
+.chalix-footer {
+    background-color: #3563c1 !important;
+    margin-top: auto;
+}
+
+.chalix-footer footer {
+    background-color: #3563c1 !important;
+    padding: 0 !important;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chalix-footer .footer-content {
+    text-align: center;
+}
+
+.chalix-footer .footer-text p {
+    color: white !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+    letter-spacing: 0.5px !important;
+    margin: 0 !important;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+
+    .chalix-top-header .header-container,
+    .chalix-nav-header .header-container {
+        padding: 0 20px;
+    }
+
+    .chalix-top-header .platform-title span {
+        font-size: 16px !important;
+    }
+
+    .chalix-nav-header .nav-tabs {
+        display: none;
+    }
+
+    .chalix-nav-header .search-section .search-bar {
+        width: 280px;
+    }
+
+    .hamburger-menu {
+        display: block !important;
+    }
+}
+
+/* Hide original header elements */
+.global-header .main-header,
+.global-header .navbar-logo-header,
+.global-header .nav-links {
+    display: none !important;
+}
+
+/* Ensure full width for Chalix header */
+.chalix-header {
+    width: 100% !important;
+    position: relative !important;
+    z-index: 1000;
+}
+
+/* Fix header container layout */
+.chalix-header .header-container {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* Mobile menu adjustments */
+.mobile-menu {
+    background: white !important;
+    border-top: 1px solid #b2b2b2 !important;
+}
+
+.mobile-nav-item a {
+    color: #394047 !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    padding: 15px 20px !important;
+}
+
+.mobile-nav-item a:hover {
+    background-color: #f8f9fa !important;
+    color: #3494c8 !important;
+}
+
+/* Override any conflicting styles */
+.chalix-header * {
+    box-sizing: border-box;
+}
+
+/* Hamburger menu styling */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger-menu .line {
+    width: 24px;
+    height: 3px;
+    background-color: #394047;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Apply CSS custom properties for consistent theming */
+:root {
+    --pgn-color-primary-500: #3494c8 !important;
+    --pgn-color-primary-base: #3494c8 !important;
+    --bs-font-family-base: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
+    --bs-body-font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
+}
+
+/* Button overrides for consistency */
+.btn-primary {
+    background-color: #3494c8 !important;
+    border-color: #3494c8 !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #2a7ba8 !important;
+    border-color: #2a7ba8 !important;
+}
+
+/* Chalix Course Card Clickable Styles */
 .chalix-course-container {
-    background: #ffffff;
-    border: 1px solid #b2b2b2;
-    border-radius: 5px;
-    overflow: hidden;
-    transition: box-shadow 0.3s ease;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
 }
 
 .chalix-course-container:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.chalix-course {
-    background: transparent;
-    border: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* Course Card Layout */
-.chalix-course-card {
-    display: flex;
-    flex-direction: column;
-    height: 255px;
-    position: relative;
-}
-
-/* Course Image Section */
-.chalix-course-image-container {
-    position: relative;
-    height: 150px;
-    overflow: hidden;
-}
-
-.chalix-course-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
 }
 
 .chalix-course-link,
-.chalix-course-link-disabled {
-    display: block;
-    height: 100%;
-    width: 100%;
-}
-
-.chalix-course-link-disabled {
-    opacity: 0.6;
-}
-
-/* Instructor Tag */
-.chalix-instructor-tag {
-    position: absolute;
-    top: 115px;
-    right: 15px;
-    background: #3494c8;
-    color: #ffffff;
-    padding: 7px 16px;
-    border-radius: 0;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1.4;
-    z-index: 10;
-}
-
-.chalix-instructor-label {
-    margin: 0;
-    padding: 0;
-}
-
-/* Course Content Section */
-.chalix-course-content {
-    padding: 16px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* Course Title */
-.chalix-course-title {
-    margin: 0 0 12px 0;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1.4;
-    color: #000000;
-}
-
 .chalix-course-title-link {
-    color: #000000;
-    text-decoration: none;
-    font-weight: 600;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+.chalix-course-link:hover {
+    opacity: 0.9 !important;
 }
 
 .chalix-course-title-link:hover {
-    color: #3494c8;
-    text-decoration: underline;
+    color: #3494c8 !important;
+    text-decoration: underline !important;
 }
 
-.chalix-course-title-disabled,
-.chalix-course-title-text {
-    color: #000000;
-    font-weight: 600;
+/* Make entire course card clickable */
+.chalix-course-card {
+    position: relative !important;
 }
 
-.chalix-course-title-disabled {
-    opacity: 0.6;
-}
-
-/* Progress Section */
-.chalix-progress-section {
-    margin-top: auto;
-    margin-bottom: 8px;
-}
-
-.chalix-progress-header {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 4px;
-}
-
-.chalix-unit-count {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: #394047;
-    background: rgba(180, 180, 180, 0.2);
-    padding: 2px 8px;
-    border-radius: 4px;
-}
-
-/* Progress Bar */
-.chalix-progress-bar-container {
-    width: 100%;
-    height: 6px;
-    background: rgba(120, 120, 120, 0.2);
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
-}
-
-.chalix-progress-bar-track {
-    width: 100%;
-    height: 100%;
-    background: rgba(120, 120, 120, 0.2);
-    border-radius: 3px;
-    position: relative;
-}
-
-.chalix-progress-bar-fill {
-    height: 100%;
-    background: #3494c8;
-    border-radius: 3px;
-    transition: width 0.3s ease;
-}
-
-/* Additional Course Actions (Hidden by default) */
-.chalix-course-actions-container {
-    background: #f8f9fa;
-    border-top: 1px solid #e9ecef;
-    padding: 16px;
-}
-
-/* Course Details */
-.chalix-course-details {
-    margin: 0;
-    padding: 0;
-}
-
-/* Screen reader text */
-.sr {
+.chalix-course-card::before {
+    content: '';
     position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
 }
 
-/* Grid Layout for Course Cards */
-.listing-courses {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .listing-courses {
-        grid-template-columns: 1fr;
-    }
-
-    .chalix-course-card {
-        height: auto;
-        min-height: 255px;
-    }
-
-    .chalix-instructor-tag {
-        top: 90px;
-        right: 10px;
-        padding: 5px 12px;
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .chalix-course-content {
-        padding: 12px;
-    }
-
-    .chalix-instructor-tag {
-        top: 80px;
-        right: 8px;
-        padding: 4px 10px;
-        font-size: 12px;
-    }
-}
-
-/* Color Theme Variables */
-:root {
-    --chalix-primary: #3494c8;
-    --chalix-secondary: #99abc8;
-    --chalix-background: #ffffff;
-    --chalix-border: #b2b2b2;
-    --chalix-text: #000000;
-    --chalix-text-muted: #394047;
-    --chalix-progress-bg: rgba(120, 120, 120, 0.2);
-}
-
-/* Dark theme support */
-[data-theme="dark"] {
-    --chalix-background: #1a1a1a;
-    --chalix-border: #444444;
-    --chalix-text: #ffffff;
-    --chalix-text-muted: #cccccc;
-}
-
-[data-theme="dark"] .chalix-course-container {
-    background: var(--chalix-background);
-    border-color: var(--chalix-border);
-    color: var(--chalix-text);
-}
-
-[data-theme="dark"] .chalix-course-title,
-[data-theme="dark"] .chalix-course-title-link,
-[data-theme="dark"] .chalix-course-title-text {
-    color: var(--chalix-text);
-}
-
-[data-theme="dark"] .chalix-unit-count {
-    color: var(--chalix-text-muted);
-    background: rgba(255, 255, 255, 0.1);
+/* Ensure links are above the overlay */
+.chalix-course-link,
+.chalix-course-title-link {
+    position: relative;
+    z-index: 2;
 }
