@@ -744,6 +744,108 @@ section.home {
     }
 }
 
+// Responsive grid overrides for landing features: prefer grid flow over absolute coordinates
+.features-container {
+    /* Make sure container is centered and fluid */
+    max-width: 1200px;
+    margin: 60px auto 40px;
+    padding: 0 12px;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 40px 20px !important;
+    align-items: start;
+}
+
+.features-container .feature-item {
+    /* Ensure items participate in the grid instead of absolute positioning */
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 18px !important;
+    box-sizing: border-box !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Ensure any individually-named feature classes don't force absolute layout */
+.feature-left-top,
+.feature-center-top,
+.feature-right-top,
+.feature-left-bottom,
+.feature-center-bottom,
+.feature-right-bottom,
+.feature-1,
+.feature-2,
+.feature-3,
+.feature-4,
+.feature-5,
+.feature-6 {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+.features-container .feature-image {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    margin-bottom: 14px !important;
+    border-radius: 8px !important;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.12) !important;
+    object-fit: cover !important;
+}
+
+.features-container .feature-text {
+    width: 100% !important;
+    padding: 0 6px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 1.25 !important;
+    color: #0054a6 !important;
+}
+
+/* Breakpoints: 3 cols (desktop) → 2 cols (tablet) → 1 col (mobile) */
+@media (max-width: 1200px) {
+    .features-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 32px 18px !important;
+        margin: 50px auto 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .features-container {
+        grid-template-columns: 1fr !important;
+        gap: 28px !important;
+        margin: 40px auto 28px;
+    }
+
+    .features-container .feature-image {
+        max-width: 100% !important;
+        height: 160px !important;
+    }
+
+    .landing-page {
+        padding: 20px 12px !important;
+    }
+}
+
+/* Small visual tweak: add subtle background and inner padding for the whole features block if desired */
+.landing-page {
+    /* light neutral background behind the grid to match screenshot spacing */
+    /* comment/uncomment below if you want the pale background */
+    /* background: #f7fff7; */
+}
+
 // Original existing styles for search functionality
 .global-header .nav-links .secondary {
     .btn-holder {
