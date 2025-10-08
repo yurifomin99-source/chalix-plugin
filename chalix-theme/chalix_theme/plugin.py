@@ -120,8 +120,8 @@ for mfe in chalix_theme_styled_mfes:
             (
                 f"mfe-dockerfile-post-npm-install-{mfe}",
                 """
-RUN npm install '@chalix/frontend-component-footer@git+https://github.com/Alimento-Team/chalix-mfe-component-footer.git#release'
-RUN npm install '@chalix/frontend-component-header@git+https://github.com/Alimento-Team/chalix-mfe-component-header.git#release'
+RUN npm install '@chalix/frontend-component-footer@git+https://github.com/yurifomin99-source/chalix-mfe-component-footer.git#release'
+RUN npm install '@chalix/frontend-component-header@git+https://github.com/yurifomin99-source/chalix-mfe-component-header.git#release'
 """,
             ),
             (
