@@ -5,9 +5,9 @@ hooks.Filters.ENV_PATCHES.add_item((
     "mfe-dockerfile-post-npm-install",
     """
 # Install brand and components from GitHub release branches
-RUN npm install '@edx/brand@git+https://github.com/Alimento-Team/brand-chalix.git'
-RUN npm install '@chalix/frontend-component-header@git+https://github.com/Alimento-Team/chalix-mfe-component-header.git#release'
-RUN npm install '@chalix/frontend-component-footer@git+https://github.com/Alimento-Team/chalix-mfe-component-footer.git#release'
+RUN npm install '@edx/brand@git+https://github.com/yurifomin99-source/brand-chalix.git'
+RUN npm install '@chalix/frontend-component-header@git+https://github.com/yurifomin99-source/chalix-mfe-component-header.git#release'
+RUN npm install '@chalix/frontend-component-footer@git+https://github.com/yurifomin99-source/chalix-mfe-component-footer.git#release'
 """
 ))
 
