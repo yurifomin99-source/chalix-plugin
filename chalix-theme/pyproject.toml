@@ -39,9 +39,9 @@ dev = [
 chalix_theme = "chalix_theme.plugin"
 
 [project.urls]
-Code = "https://github.com/Alimento-Team/chalix-plugin"
+Code = "https://github.com/yurifomin99-source/chalix-plugin"
 Documentation = "https://docs.tutor.edly.io/"
-Homepage = "https://github.com/Alimento-Team/chalix-plugin"
+Homepage = "https://github.com/yurifomin99-source/chalix-plugin"
 
 # hatch related configurations
 [build-system]
